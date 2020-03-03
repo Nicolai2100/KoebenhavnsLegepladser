@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LegepladserComponent } from './legepladser/legepladser.component';
 import { LegepladsListeComponent } from './legepladser/legeplads-liste/legeplads-liste.component';
 import { LegepladsBillederComponent } from './legepladser/legeplads-billeder/legeplads-billeder.component';
+// husk dette bibliotek: npm install angular-image-slider --save
 import {SliderModule} from 'angular-image-slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
