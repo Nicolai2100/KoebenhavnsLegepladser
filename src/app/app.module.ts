@@ -8,6 +8,8 @@ import { LegepladsBillederComponent } from './legepladser/legeplads-billeder/leg
 import {SliderModule} from 'angular-image-slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import {FormsModule} from '@angular/forms';
     LegepladserComponent,
     LegepladsListeComponent,
     LegepladsBillederComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

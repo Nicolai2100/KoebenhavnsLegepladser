@@ -1,0 +1,18 @@
+a.navbar-brand {
+  font-weight: bold;
+}
+
+a.pull-left {
+  position: center;
+  width: 50px;
+}
+
+button {
+  background-color: #000C2E;
+  color: lightgray;
+  border: #000C2E;
+  float: right;
+}
+
+
+
