@@ -8,10 +8,8 @@ import { LegepladsBillederComponent } from './legepladser/legeplads-billeder/leg
 // husk dette bibliotek: npm install angular-image-slider --save
 import {SliderModule} from 'angular-image-slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
@@ -35,7 +33,6 @@ const appRoutes: Routes = [
     LegepladsBillederComponent,
     HeaderComponent,
     FooterComponent,
-    AppComponent,
     KindergardendetailsComponent,
     KindergardenItemComponent,
     KindergardenListComponent,
@@ -45,8 +42,6 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     SliderModule,
-    FormsModule,
-    BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
