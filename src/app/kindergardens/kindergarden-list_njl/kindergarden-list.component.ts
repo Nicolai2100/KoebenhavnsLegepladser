@@ -1,5 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {KinderGarden} from '../../shared/KinderGarden.model';
+import {Legeplads} from '../../legepladser/legeplads.model';
+import {KindergardendataService} from '../../shared/kindergardendata.service';
 
 @Component({
   selector: 'app-kindergarden-list',
@@ -7,15 +9,15 @@ import {KinderGarden} from '../../shared/KinderGarden.model';
   styleUrls: ['./kindergarden-list.component.css']
 })
 export class KindergardenListComponent implements OnInit {
-  kinderGardens: KinderGarden[] = [
-    new KinderGarden('A Test Garden 1'),
-    new KinderGarden('A Test Garden 2')
-  ];
-  @Output() kinderWasSelected = new EventEmitter<KinderGarden>()
+  kinderGardens: KinderGarden[];
 
-  constructor() { }
+  @Output() kinderWasSelected = new EventEmitter<KinderGarden>();
+
+  constructor(private kindergardendataService: KindergardendataService) {
+  }
 
   ngOnInit() {
+    this.kinderGardens = this.kindergardendataService.kinderGardens;
   }
 
   onRecipeSelected(recipeElement: KinderGarden) {

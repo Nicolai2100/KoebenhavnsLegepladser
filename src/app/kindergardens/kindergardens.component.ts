@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+// @ts-ignore
 @Component({
   selector: 'app-kindergardens',
   templateUrl: './kindergardens.component.html',
