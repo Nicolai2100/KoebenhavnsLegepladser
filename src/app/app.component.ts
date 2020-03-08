@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {KindergardendataService} from './shared/kindergardendata.service';
 import {KinderGarden} from './shared/KinderGarden.model';
 
+// @ts-ignore
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +15,4 @@ export class AppComponent {
   constructor(private kindergardendataService: KindergardendataService) {
   }
 
-  onKinderGardenSelected(kinderGardenItem: KinderGarden) {
-
-  }
 }
