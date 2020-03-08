@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-kindergarden-list
+      (kinderWasSelected)="selectedKinderGarden = $event">
+    </app-kindergarden-list>
+  </div>
+  <div class="col-md-7">
+    <app-kindergardendetails *ngIf="selectedKinderGarden; else infotext"
+                             [kinderGarden]=selectedKinderGarden>
+    </app-kindergardendetails>
+    <ng-template #infotext>
+      <p>Please select a recipe</p>
+    </ng-template>
+  </div>
+</div>
+
+
