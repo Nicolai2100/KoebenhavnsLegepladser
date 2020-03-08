@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {KinderGardenModel} from '../kindergardendetails/KinderGarden.model';
+import {KinderGarden} from '../../shared/KinderGarden.model';
 
 @Component({
   selector: 'app-kindergardendetails',
@@ -7,7 +7,7 @@ import {KinderGardenModel} from '../kindergardendetails/KinderGarden.model';
   styleUrls: ['./kindergardendetails.component.css']
 })
 export class KindergardendetailsComponent implements OnInit {
-  @Input() kinderGarden: KinderGardenModel;
+  @Input() kinderGarden: KinderGarden;
   isOpen = false;
 
   constructor() {

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {KindergardendataService} from './shared/kindergardendata.service';
+import {KinderGarden} from './shared/KinderGarden.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'KoebenhavnsLegepladser';
+  kinderGardens = this.kindergardendataService.kinderGardens;
+
+  constructor(private kindergardendataService: KindergardendataService) {
+  }
+
+  onKinderGardenSelected(kinderGardenItem: KinderGarden) {
+
+  }
 }

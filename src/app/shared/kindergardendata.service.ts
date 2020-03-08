@@ -1,20 +1,33 @@
-import {Injectable, OnInit} from '@angular/core';
-import {KinderGardenModel} from './kindergardendetails/KinderGarden.model';
-import {AddressModel} from './kindergardendetails/Address.model';
+import {EventEmitter, Injectable, OnInit} from '@angular/core';
+import {KinderGarden} from './KinderGarden.model';
+import {AddressModel} from './Address.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KindergardendataService {
-  address: AddressModel[];
-  kinderGardens: KinderGardenModel[];
+  // address: AddressModel[];
+   // kinderGardens: KinderGardenModel[];
+
+  kinderGardens = [
+    {
+      name: 'Master Account',
+    },
+    {
+      name: 'Testaccount',
+    },
+    {
+      name: 'Hidden Account',
+    }
+  ];
+  statusUpdated = new EventEmitter<string>();
 
   constructor() {
   }
 
 
   instaModels() {
-    let newGarden = new KinderGardenModel('Tårnlegepladsen');
+    let newGarden = new KinderGarden('Tårnlegepladsen');
     const newAdress = new AddressModel();
     newAdress.streetName = 'Frederik V\'s Vej';
     newAdress.streetNumber = 4;
@@ -23,7 +36,7 @@ export class KindergardendataService {
     newGarden.adress = newAdress;
     this.kinderGardens.push(newGarden);
 
-    newGarden = new KinderGardenModel('Vandlegepladsen');
+    newGarden = new KinderGarden('Vandlegepladsen');
     newAdress.streetName = 'Fælledparken ved Edel Sauntes Allé';
     newAdress.zipCode = 2100;
     newAdress.commune = 'København Ø';
@@ -31,7 +44,7 @@ export class KindergardendataService {
     this.kinderGardens.push(newGarden);
   }
 
-  addKinderGarden(newGarden: KinderGardenModel) {
+  addKinderGarden(newGarden: KinderGarden) {
     this.kinderGardens.push(newGarden);
   }
 }

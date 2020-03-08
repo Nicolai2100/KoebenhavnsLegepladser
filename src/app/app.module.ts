@@ -5,8 +5,10 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
-import {KinderGardenDetailsComponent} from './kinder-garden-details/kinder-garden-details.component';
-import { KindergardendetailsComponent } from './kindergardendetails/kindergardendetails.component';
+import { KindergardendetailsComponent } from './kindergardens/kindergardendetails/kindergardendetails.component';
+import { KindergardenItemComponent } from './kindergardens/kindergarden-list/kindergarden-item/kindergarden-item.component';
+import { KindergardenListComponent } from './kindergardens/kindergarden-list/kindergarden-list.component';
+import { KindergardensComponent } from './kindergardens/kindergardens.component';
 
 const appRoutes: Routes = [
   // {path: '', component: WelcomeComponent},
@@ -18,6 +20,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     KindergardendetailsComponent,
+    KindergardenItemComponent,
+    KindergardenListComponent,
+    KindergardensComponent,
   ],
   imports: [
     BrowserModule,
