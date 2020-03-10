@@ -4,3 +4,10 @@
   width: 1200px;
   height: 500px;
 }
+
+hr {
+  margin-top: 4px;
+  height: 3px;
+  color: #000C2E;
+  background: #000C2E;
+}
