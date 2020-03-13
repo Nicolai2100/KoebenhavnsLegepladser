@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {SliderModule} from 'angular-image-slider';
 import {NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -6,7 +7,6 @@ import { LegepladserComponent } from './legepladser/legepladser.component';
 import { LegepladsListeComponent } from './legepladser/legeplads-liste/legeplads-liste.component';
 import { LegepladsBillederComponent } from './legepladser/legeplads-billeder/legeplads-billeder.component';
 // husk dette bibliotek: npm install angular-image-slider --save
-import {SliderModule} from 'angular-image-slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,6 +17,8 @@ import { KindergardendetailsComponent } from './kindergardens/kindergardendetail
 import { KindergardenItemComponent } from './kindergardens/kindergarden-list_njl/kindergarden-item/kindergarden-item.component';
 import { KindergardenListComponent } from './kindergardens/kindergarden-list_njl/kindergarden-list.component';
 import { KindergardensComponent } from './kindergardens/kindergardens.component';
+import { WorkerListComponent} from './worker-list/worker-list.component';
+import {workerService} from './worker-list/worker.service';
 
 const appRoutes: Routes = [
   // {path: '', component: WelcomeComponent},
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     KindergardenItemComponent,
     KindergardenListComponent,
     KindergardensComponent,
+    WorkerListComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [workerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
