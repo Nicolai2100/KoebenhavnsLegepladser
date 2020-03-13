@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Workers} from './worker-list/Workes.model';
+import {workerService} from './worker-list/worker.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'KoebenhavnsLegepladser';
-}
+  }

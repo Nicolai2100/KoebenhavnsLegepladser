@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-10">
+    <ul class="list-group">
+      <a
+      *ngFor="let workerel of workers">
+        >
+    <img src="{{ workerel.imagePath }}" width="150" height="112">
+    <p style="height: 10px; font-size: 13px"> Navn: {{workerel.name}}</p>
+    <p style="height: 10px; font-size: 13px"> Telefon: {{workerel.tlfnumber}}</p>
+    <p style="height: 10px; font-size: 13px"> Email: {{workerel.email}}</p>
+    </a>
+    </ul>
+  </div>
+</div>
