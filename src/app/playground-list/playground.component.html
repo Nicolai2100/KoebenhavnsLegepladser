@@ -1,7 +1,8 @@
+<input type="text" [(ngModel)]="playgroundname" (input)="Search()">
 <div class="row">
   <div class="col-xs-12">
     <hr>
-    <a href="#" class="list-group-item clearfix" *ngFor="let playground of Playgrounds">
+    <a href="#" class="list-group-item clearfix" *ngFor="let playground of playground">
       <div class="pull-left">
         <h4 class="bold">{{ playground.playground }}</h4>
         <p class="list-group-item-text">{{ playground.description }}</p>
@@ -16,7 +17,4 @@
     </a>
   </div>
 </div>
-
-
-
 
