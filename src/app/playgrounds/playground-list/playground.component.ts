@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {PlaygroundModel} from '../datamodel/playground.model';
+import {PlaygroundModel} from '../../datamodel/playground.model';
 import {playground} from './playground.model';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-playground',
   templateUrl: './playground.component.html',
   styleUrls: ['./playground.component.css']
 })
