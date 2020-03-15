@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PlaygroundPhotosComponent } from './playgrounds/playground-photos/playground-photos.component';
-// husk dette bibliotek: npm install angular-image-slider --save
-import {SliderModule} from 'angular-image-slider';
 // husk dette bibliotek: npm install angular-bootstrap-md --save
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -26,7 +24,6 @@ import { PlaygroundComponent } from './playgrounds/playground-list/playground.co
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    SliderModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
   ],
