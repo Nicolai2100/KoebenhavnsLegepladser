@@ -8,7 +8,7 @@ import {KinderGarden} from '../../shared/KinderGarden.model';
 })
 export class KindergardendetailsComponent implements OnInit {
   @Input() kinderGarden: KinderGarden;
-  isOpen = false;
+  // isOpen = false;
   adressStreetStr: string;
   adressCommuneStr: string;
 

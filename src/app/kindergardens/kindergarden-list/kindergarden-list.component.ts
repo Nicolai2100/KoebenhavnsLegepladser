@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {KinderGarden} from '../../shared/KinderGarden.model';
-import {Legeplads} from '../../legepladser/legeplads.model';
 import {KindergardendataService} from '../../shared/kindergardendata.service';
 
 @Component({

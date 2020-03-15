@@ -9,8 +9,8 @@ import {KinderGarden} from '../../../shared/KinderGarden.model';
 export class KindergardenItemComponent implements OnInit {
   @Input() kinderGarden: KinderGarden;
   name: string;
-  description: string;
-  imagePath: string;
+  // description: string;
+  // imagePath: string;
   @Output() kinderGardenSelected = new EventEmitter<void>();
 
   constructor() { }

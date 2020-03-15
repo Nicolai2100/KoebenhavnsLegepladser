@@ -1,0 +1,37 @@
+.search {
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 36%;
+  padding: 7px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+}
+
+.centering {
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  margin-top: -35px;
+  top: 55%;
+  left: 50%;
+}
+
+
+.bold {
+  color: #007ea4;
+}
+
+.list-group-item-text {
+  color: #000C2E;
+
+}
+
+
+.img-responsive {
+  margin-left: 365px;
+  margin-top: -100px;
+}

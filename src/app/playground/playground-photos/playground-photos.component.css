@@ -1,0 +1,9 @@
+.centeringImages {
+  height: 300px;
+  width: 1500px;
+}
+
+.container-md {
+  margin-left: auto;
+  margin-right: auto;
+}

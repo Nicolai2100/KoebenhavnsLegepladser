@@ -1,0 +1,19 @@
+<input class="search" type="text" placeholder="Find legeplads" [(ngModel)]="playgroundname" (input)="Search()">
+<div class="centering">
+  <div class="row">
+    <div class="col-xs-12">
+      <a href="#" class="list-group-item clearfix" *ngFor="let playground of playground">
+        <h4 class="bold">{{ playground.playground }}</h4>
+        <p class="list-group-item-text">{{ playground.description }}</p>
+        <span>
+        <img
+          [src]="playground.imagePath"
+          alt="{{ playground.description }}"
+          class="img-responsive"
+          style="max-height: 75px;">
+      </span>
+      </a>
+    </div>
+  </div>
+</div>
+
