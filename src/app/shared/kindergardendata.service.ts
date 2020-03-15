@@ -2,12 +2,16 @@ import {EventEmitter, Injectable, OnInit} from '@angular/core';
 import {KinderGarden} from './KinderGarden.model';
 import {AddressModel} from './Address.model';
 import {Legeplads} from '../legepladser/legeplads.model';
+import {HttpClient} from '@angular/common/http';
+import {KinderGardenDum} from './KinderGardenDum.model';
+import {PlaygroundInterface} from './playground.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KindergardendataService {
   // kinderGardens: KinderGardenModel[];
+  path = 'http://localhost:8088/rest/playgrounds';
 
   events1: string[] = [
     'klatring',
@@ -37,13 +41,41 @@ export class KindergardendataService {
       this.events2,
       this.address[1])
   ];
+  kinderGardensFromDB: KinderGardenDum[];
+ // kinderGardens: PlaygroundInterface[];
 
   statusUpdated = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  addKinderGarden(newGarden: KinderGarden) {
+  getPlaygrounds() {
+    this.http
+      .get<PlaygroundInterface[]>(
+        this.path)
+      .subscribe(
+        response => {
+          response.forEach((s: PlaygroundInterface) => {
+            console.log(s);
+          });
+        },
+        err => console.log(err));
+  }
+
+  /*  private getHighScores() {
+    console.log('fetching highscores...');
+    this.httpClient.get<[]>(
+      this.path + 'galgeleg/highscore')
+      .subscribe(
+        response => {
+          response.forEach((s) => {
+            this.highScoreList.push(JSON.parse(s));
+          });
+        },
+        err => console.log(err));
+  }*/
+
+  addKinderGarden(newGarden: PlaygroundInterface) {
     this.kinderGardens.push(newGarden);
   }
 }

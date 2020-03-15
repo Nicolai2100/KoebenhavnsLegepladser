@@ -9,10 +9,8 @@ import {KinderGarden} from './shared/KinderGarden.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'KoebenhavnsLegepladser';
-  kinderGardens = this.kindergardendataService.kinderGardens;
 
-  constructor(private kindergardendataService: KindergardendataService) {
+  constructor() {
   }
 
 }

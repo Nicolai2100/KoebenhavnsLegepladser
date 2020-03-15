@@ -18,6 +18,7 @@ export class KindergardenListComponent implements OnInit {
 
   ngOnInit() {
     this.kinderGardens = this.kindergardendataService.kinderGardens;
+    this.kindergardendataService.getPlaygrounds();
   }
 
   onRecipeSelected(recipeElement: KinderGarden) {
