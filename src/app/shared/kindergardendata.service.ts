@@ -1,7 +1,6 @@
 import {EventEmitter, Injectable, OnInit} from '@angular/core';
 import {KinderGarden} from './KinderGarden.model';
 import {AddressModel} from './Address.model';
-import {Legeplads} from '../legepladser/legeplads.model';
 
 @Injectable({
   providedIn: 'root'

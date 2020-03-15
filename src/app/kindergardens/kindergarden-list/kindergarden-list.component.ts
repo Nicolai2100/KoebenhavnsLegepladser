@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {KinderGarden} from '../../shared/KinderGarden.model';
 import {KindergardendataService} from '../../shared/kindergardendata.service';
+import {Playground} from '../../playground/playground.model';
 
 @Component({
   selector: 'app-kindergarden-list',
@@ -9,6 +10,7 @@ import {KindergardendataService} from '../../shared/kindergardendata.service';
 })
 export class KindergardenListComponent implements OnInit {
   kinderGardens: KinderGarden[];
+  playgroundname: string;
 
   @Output() kinderWasSelected = new EventEmitter<KinderGarden>();
 
@@ -19,7 +21,21 @@ export class KindergardenListComponent implements OnInit {
     this.kinderGardens = this.kindergardendataService.kinderGardens;
   }
 
-  onRecipeSelected(recipeElement: KinderGarden) {
-    this.kinderWasSelected.emit(recipeElement);
+  onPlaygroundSelected(playgroundSelected: KinderGarden) {
+    this.kinderWasSelected.emit(playgroundSelected);
+  }
+
+  Search() {
+    // tslint:disable-next-line:triple-equals
+    if (this.playgroundname != '') {
+      this.kinderGardens = this.kinderGardens.filter(search => {
+        return search.name.toLocaleLowerCase().match(this.playgroundname.toLocaleLowerCase());
+      });
+
+      // tslint:disable-next-line:triple-equals
+    } else if (this.playgroundname == '') {
+      this.ngOnInit();
+
+    }
   }
 }

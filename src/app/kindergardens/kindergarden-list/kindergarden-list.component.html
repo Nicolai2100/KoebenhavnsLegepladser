@@ -1,10 +1,14 @@
+<input class="search" type="text" placeholder="Find legeplads" [(ngModel)]="playgroundname" (input)="Search()">
+<div class="center">
 <div class="row">
   <div class="col-xs-12">
     <app-kindergarden-item
       *ngFor="let kgardenElement of kinderGardens"
       [kinderGarden]="kgardenElement"
-      (kinderGardenSelected)="onRecipeSelected(kgardenElement)">
+      (kinderGardenSelected)="onPlaygroundSelected(kgardenElement)">
     </app-kindergarden-item>
   </div>
 </div>
+</div>
+
 

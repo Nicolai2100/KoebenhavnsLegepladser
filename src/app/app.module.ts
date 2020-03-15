@@ -17,8 +17,7 @@ import { KindergardenListComponent } from './kindergardens/kindergarden-list/kin
 import { KindergardensComponent } from './kindergardens/kindergardens.component';
 import { WorkerListComponent} from './worker-list/worker-list.component';
 import {workerService} from './worker-list/worker.service';
-import { PlaygroundComponent } from './playground/playground.component';
-import { PlaygroundPhotosComponent } from './playground/playground-photos/playground-photos.component';
+import { PlaygroundPhotosComponent } from './playground-photos/playground-photos.component';
 
 const appRoutes: Routes = [
   // {path: '', component: WelcomeComponent},
@@ -37,7 +36,6 @@ const appRoutes: Routes = [
     KindergardenListComponent,
     KindergardensComponent,
     WorkerListComponent,
-    PlaygroundComponent,
     PlaygroundPhotosComponent,
   ],
   imports: [
