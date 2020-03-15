@@ -1,4 +1,4 @@
-export class playground {
+export class Playground {
   public playground: string;
   public description: string;
   public imagePath: string;

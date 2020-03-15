@@ -1,6 +1,9 @@
-.playground-image-container{
-  margin-right: auto;
-  margin-left: auto;
-  width: 1200px;
-  height: 500px;
+.centeringImages {
+  height: 300px;
+  width: 1500px;
+}
+
+.container-md {
+  margin-left: 330px;
+  margin-right: 330px;
 }

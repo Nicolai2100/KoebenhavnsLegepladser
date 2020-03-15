@@ -5,7 +5,7 @@
     <a href="#" class="list-group-item clearfix" *ngFor="let playground of playground">
         <h4 class="bold">{{ playground.playground }}</h4>
         <p class="list-group-item-text">{{ playground.description }}</p>
-      <span class="rightsideImage">
+      <span>
         <img
           [src]="playground.imagePath"
           alt="{{ playground.description }}"
