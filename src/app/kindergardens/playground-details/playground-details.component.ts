@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Playground} from '../../shared/playground.model';
 
 @Component({
-  selector: 'app-playgrounddetails',
-  templateUrl: './playgrounddetails.component.html',
-  styleUrls: ['./playgrounddetails.component.css']
+  selector: 'app-playground-details',
+  templateUrl: './playground-details.component.html',
+  styleUrls: ['./playground-details.component.css']
 })
-export class KindergardendetailsComponent implements OnInit {
+export class PlaygroundDetailsComponent implements OnInit {
   @Input() playground: Playground;
   // isOpen = false;
   adressStreetStr: string;

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Playground} from '../../shared/playground.model';
 import {PlaygrounddataService} from '../../shared/playgrounddata.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-kindergarden-list',
@@ -8,27 +9,32 @@ import {PlaygrounddataService} from '../../shared/playgrounddata.service';
   styleUrls: ['./playground-list.component.css']
 })
 export class PlaygroundListComponent implements OnInit {
-  kinderGardens: Playground[];
+  playgrounds: Playground[];
   playgroundname: string;
 
   @Output() kinderWasSelected = new EventEmitter<Playground>();
 
-  constructor(private kindergardendataService: PlaygrounddataService) {
+  constructor(private kindergardendataService: PlaygrounddataService,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.kinderGardens = this.kindergardendataService.kinderGardens;
-    this.kindergardendataService.getPlaygrounds();
+    this.playgrounds = this.kindergardendataService.kinderGardens;
+   // this.kindergardendataService.getPlaygrounds();
   }
 
   onPlaygroundSelected(playgroundSelected: Playground) {
     this.kinderWasSelected.emit(playgroundSelected);
+    this.route.snapshot.params.id;
+    this.router.navigate(['legepladser', {relativeTo: this.route}]);
+
   }
 
   Search() {
     // tslint:disable-next-line:triple-equals
     if (this.playgroundname != '') {
-      this.kinderGardens = this.kinderGardens.filter(search => {
+      this.playgrounds = this.playgrounds.filter(search => {
         return search.name.toLocaleLowerCase().match(this.playgroundname.toLocaleLowerCase());
       });
 

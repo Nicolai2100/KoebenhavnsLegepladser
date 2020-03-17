@@ -10,8 +10,7 @@ import {PlaygroundInterface} from './playground.interface';
 })
 
 export class PlaygrounddataService {
-  // kinderGardens: KinderGardenModel[];
-  path = 'http://localhost:8088/rest/playgrounds';
+  // path = 'http://localhost:8088/rest/playgrounds';
 
   events1: string[] = [
     'klatring',
@@ -31,25 +30,29 @@ export class PlaygrounddataService {
   kinderGardens: Playground[] = [
     new Playground('Eriksminde',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/10/Naturlegeplads_eriksminde_uno_2.jpg',
-      this.events1, this.address[0]),
+      this.events1,
+      true,
+      this.address[0]),
     new Playground('Mariehøj',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/05/P5250693-1024x768.jpg',
       this.events2,
+      true,
       this.address[1]),
     new Playground('Hakkemosen',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/02/image1.jpg',
       this.events2,
+      false,
       this.address[1])
   ];
   kinderGardensFromDB: KinderGardenDum[];
- // kinderGardens: PlaygroundInterface[];
+  // kinderGardens: PlaygroundInterface[];
 
   statusUpdated = new EventEmitter<string>();
 
   constructor(private http: HttpClient) {
   }
 
-  getPlaygrounds() {
+/*  getPlaygrounds() {
     this.http
       .get<PlaygroundInterface[]>(
         this.path)
@@ -60,7 +63,7 @@ export class PlaygrounddataService {
           });
         },
         err => console.log(err));
-  }
+  }*/
 
   /*  private getHighScores() {
     console.log('fetching highscores...');
@@ -74,8 +77,8 @@ export class PlaygrounddataService {
         },
         err => console.log(err));
   }*/
-
+/*
   addKinderGarden(newGarden: PlaygroundInterface) {
     this.kinderGardens.push(newGarden);
-  }
+  }*/
 }
