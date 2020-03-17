@@ -21,11 +21,12 @@ import {PlaygroundPhotosComponent} from './playground-photos/playground-photos.c
 import {EventsComponent} from './events/events.component';
 
 const appRoutes: Routes = [
-  {path: 'legepladser', component: PlaygroundsComponent},
-   {path: 'legepladser/:name', component: PlaygroundsComponent},
   {path: 'aktiviteter', component: EventsComponent},
-  {path: 'billeder', component: PlaygroundPhotosComponent}
-
+  {path: 'billeder', component: PlaygroundPhotosComponent},
+  {path: 'legepladser', component: PlaygroundsComponent, children: [
+      {path: ':name', component: PlaygroundDetailsComponent}
+    ]
+  },
 ];
 
 // @ts-ignore
