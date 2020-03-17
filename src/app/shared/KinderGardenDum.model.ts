@@ -1,5 +1,5 @@
 import {AddressModel} from './Address.model';
-
+// todo skal slettes
 export class KinderGardenDum {
 
   public constructor(

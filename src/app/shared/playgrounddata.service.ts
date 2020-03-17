@@ -1,7 +1,6 @@
 import {EventEmitter, Injectable, OnInit} from '@angular/core';
-import {KinderGarden} from './KinderGarden.model';
+import {Playground} from './playground.model';
 import {AddressModel} from './Address.model';
-import {Legeplads} from '../legepladser/legeplads.model';
 import {HttpClient} from '@angular/common/http';
 import {KinderGardenDum} from './KinderGardenDum.model';
 import {PlaygroundInterface} from './playground.interface';
@@ -10,7 +9,7 @@ import {PlaygroundInterface} from './playground.interface';
   providedIn: 'root'
 })
 
-export class KindergardendataService {
+export class PlaygrounddataService {
   // kinderGardens: KinderGardenModel[];
   path = 'http://localhost:8088/rest/playgrounds';
 
@@ -29,15 +28,15 @@ export class KindergardendataService {
   ];
 
 
-  kinderGardens: KinderGarden[] = [
-    new KinderGarden('Eriksminde',
+  kinderGardens: Playground[] = [
+    new Playground('Eriksminde',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/10/Naturlegeplads_eriksminde_uno_2.jpg',
       this.events1, this.address[0]),
-    new KinderGarden('Mariehøj',
+    new Playground('Mariehøj',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/05/P5250693-1024x768.jpg',
       this.events2,
       this.address[1]),
-    new KinderGarden('Hakkemosen',
+    new Playground('Hakkemosen',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/02/image1.jpg',
       this.events2,
       this.address[1])

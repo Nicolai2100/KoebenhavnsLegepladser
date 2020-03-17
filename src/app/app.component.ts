@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {KindergardendataService} from './shared/kindergardendata.service';
-import {KinderGarden} from './shared/KinderGarden.model';
+import {PlaygrounddataService} from './shared/playgrounddata.service';
+import {Playground} from './shared/playground.model';
 
 // @ts-ignore
 @Component({

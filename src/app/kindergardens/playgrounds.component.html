@@ -1,6 +1,5 @@
 <br>
 <br>
-
 <div class="row">
   <div class="col-md-5">
     <app-kindergarden-list
@@ -8,12 +7,10 @@
     </app-kindergarden-list>
   </div>
   <div class="col-md-7">
-    <app-kindergardendetails *ngIf="selectedKinderGarden; else infotext"
-                             [kinderGarden]=selectedKinderGarden>
-    </app-kindergardendetails>
+    <app-playgrounddetails *ngIf="selectedKinderGarden; else infotext"
+                           [playground]="selectedKinderGarden">
+    </app-playgrounddetails>
     <ng-template #infotext>
-
-      <p>Vælg en legeplads</p>
     </ng-template>
   </div>
 </div>

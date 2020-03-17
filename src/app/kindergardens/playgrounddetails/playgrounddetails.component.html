@@ -1,14 +1,15 @@
+<div class="moveDetails" style="color: #007ea4">
 <div class="row">
   <div class="col-xs-12">
-    <img [src]="kinderGarden.imagePath"
-         alt="{{kinderGarden.name}}"
+    <img [src]="playground.imagePath"
+         alt="{{playground.name}}"
          class="img-responsive"
          style="max-height: 100px">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>{{kinderGarden.name}}</h1>
+    <h1>{{playground.name}}</h1>
   </div>
 </div>
 <div class="row">
@@ -26,9 +27,10 @@
     <tbody>
     <h4>Events: </h4>
     <ul>
-      <li *ngFor="let eventElement of kinderGarden.events">
+      <li *ngFor="let eventElement of playground.events">
         <td>{{eventElement}}</td>
       </li>
     </ul>
   </div>
+</div>
 </div>

@@ -1,16 +1,16 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {KinderGarden} from '../../../shared/KinderGarden.model';
+import {Playground} from '../../../shared/playground.model';
 
 @Component({
   selector: 'app-kindergarden-item',
-  templateUrl: './kindergarden-item.component.html',
-  styleUrls: ['./kindergarden-item.component.css']
+  templateUrl: './playground-item.component.html',
+  styleUrls: ['./playground-item.component.css']
 })
-export class KindergardenItemComponent implements OnInit {
-  @Input() kinderGarden: KinderGarden;
+export class PlaygroundItemComponent implements OnInit {
+  @Input() kinderGarden: Playground;
   name: string;
-  description: string;
-  imagePath: string;
+  // description: string;
+  // imagePath: string;
   @Output() kinderGardenSelected = new EventEmitter<void>();
 
   constructor() { }
