@@ -9,6 +9,7 @@ import {PlaygroundInterface} from './playground.interface';
 @Injectable({
   providedIn: 'root'
 })
+
 export class KindergardendataService {
   // kinderGardens: KinderGardenModel[];
   path = 'http://localhost:8088/rest/playgrounds';
