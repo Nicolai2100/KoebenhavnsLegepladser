@@ -8,6 +8,7 @@ export class Playground {
     public name: string,
     public imagePath: string,
     public events: string[],
+    public toiletFacilities: boolean,
     public adress: AddressModel) {
   }
 }

@@ -7,9 +7,9 @@
     </app-kindergarden-list>
   </div>
   <div class="col-md-7">
-    <app-playgrounddetails *ngIf="selectedKinderGarden; else infotext"
-                           [playground]="selectedKinderGarden">
-    </app-playgrounddetails>
+    <app-playground-details *ngIf="selectedKinderGarden; else infotext"
+                            [playground]="selectedKinderGarden">
+    </app-playground-details>
     <ng-template #infotext>
     </ng-template>
   </div>

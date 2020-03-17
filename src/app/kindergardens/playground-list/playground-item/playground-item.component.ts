@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Playground} from '../../../shared/playground.model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-kindergarden-item',
@@ -7,13 +8,13 @@ import {Playground} from '../../../shared/playground.model';
   styleUrls: ['./playground-item.component.css']
 })
 export class PlaygroundItemComponent implements OnInit {
-  @Input() kinderGarden: Playground;
+  @Input() playground: Playground;
   name: string;
   // description: string;
   // imagePath: string;
   @Output() kinderGardenSelected = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
   }

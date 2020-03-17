@@ -7,6 +7,7 @@ export interface PlaygroundInterface {
   zipCode: number;
   toilet: boolean;
   imagePath: string;
+  toiletPosibilities: boolean;
 
   numOfEmployees: number;
   employeeList: [];
