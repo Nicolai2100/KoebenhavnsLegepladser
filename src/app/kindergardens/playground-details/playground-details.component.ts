@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Playground} from '../../shared/playground.model';
+import {ActivatedRoute, Router} from '@angular/router';
+import {PlaygrounddataService} from '../../shared/playgrounddata.service';
 
 @Component({
   selector: 'app-playground-details',
@@ -12,10 +14,13 @@ export class PlaygroundDetailsComponent implements OnInit {
   adressStreetStr: string;
   adressCommuneStr: string;
 
-  constructor() {
+  constructor(private route: ActivatedRoute,
+              private playgrounddataService: PlaygrounddataService) {
   }
 
   ngOnInit() {
+    // this.playground = this.playgrounddataService.kinderGardens.find( element => element.name === this.route.snapshot.params[name]);
+    console.log(this.playground.name);
     this.adressStreetStr = this.playground.adress.streetName + ' ' +
       +this.playground.adress.streetNumber;
     this.adressCommuneStr =

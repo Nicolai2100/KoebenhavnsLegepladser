@@ -2,18 +2,11 @@
 <div class="center">
   <div class="row">
     <div class="col-xs-12">
-      <div class="list-group">
-        <app-kindergarden-item
-          href="#"
-          class="list-group-item"
-          *ngFor="let playgroundElement of playgrounds"
-          [routerLink]="[playgroundElement.name]"
-          [playground]="playgroundElement"
-          (kinderGardenSelected)="onPlaygroundSelected(playgroundElement)">
-        </app-kindergarden-item>
-      </div>
+      <app-kindergarden-item
+        *ngFor="let playgroundElement of playgrounds"
+        [playground]="playgroundElement"
+        (kinderGardenSelected)="onPlaygroundSelected(playgroundElement)">
+      </app-kindergarden-item>
     </div>
   </div>
 </div>
-
-

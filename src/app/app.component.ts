@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PlaygrounddataService} from './shared/playgrounddata.service';
 import {Playground} from './shared/playground.model';
+import {Router} from '@angular/router';
 
 // @ts-ignore
 @Component({
@@ -8,9 +9,13 @@ import {Playground} from './shared/playground.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
+  }
+
+  ngOnInit(): void {
+    this.router.navigate(['legepladser', {}]);
   }
 
 }

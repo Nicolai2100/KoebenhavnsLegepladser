@@ -12,7 +12,7 @@ export class PlaygroundListComponent implements OnInit {
   playgrounds: Playground[];
   playgroundname: string;
 
-  @Output() kinderWasSelected = new EventEmitter<Playground>();
+  @Output() playgroundWasSelected = new EventEmitter<Playground>();
 
   constructor(private kindergardendataService: PlaygrounddataService,
               private router: Router,
@@ -25,9 +25,9 @@ export class PlaygroundListComponent implements OnInit {
   }
 
   onPlaygroundSelected(playgroundSelected: Playground) {
-    this.kinderWasSelected.emit(playgroundSelected);
-    this.route.snapshot.params.id;
-    this.router.navigate(['legepladser', {relativeTo: this.route}]);
+    this.playgroundWasSelected.emit(playgroundSelected);
+    // todo this.route.snapshot.params.id;
+   // this.router.navigate(['legepladser', {relativeTo: this.route}]);
 
   }
 

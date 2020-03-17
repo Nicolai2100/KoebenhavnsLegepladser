@@ -18,16 +18,14 @@ import {PlaygroundsComponent} from './kindergardens/playgrounds.component';
 import {WorkerListComponent} from './worker-list/worker-list.component';
 import {workerService} from './worker-list/worker.service';
 import {PlaygroundPhotosComponent} from './playground-photos/playground-photos.component';
-import { EventsComponent } from './events/events.component';
+import {EventsComponent} from './events/events.component';
 
 const appRoutes: Routes = [
   {path: 'legepladser', component: PlaygroundsComponent},
-  {path: 'legepladser/:name', component: PlaygroundDetailsComponent},
+   {path: 'legepladser/:name', component: PlaygroundsComponent},
   {path: 'aktiviteter', component: EventsComponent},
   {path: 'billeder', component: PlaygroundPhotosComponent}
 
-  /*{path: 'game', component: GameComponent},
-  {path: 'highscore', component: HighscoreComponent}*/
 ];
 
 // @ts-ignore
