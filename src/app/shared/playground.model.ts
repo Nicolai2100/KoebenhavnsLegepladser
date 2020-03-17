@@ -1,4 +1,4 @@
-import {AddressModel} from './Address.model';
+import {AddressModel} from './address.model';
 
 export class Playground {
   public numOfEmployees: number;

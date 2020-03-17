@@ -4,8 +4,7 @@
     <div class="col-xs-12">
       <app-kindergarden-item
         *ngFor="let playgroundElement of playgrounds"
-        [playground]="playgroundElement"
-        (kinderGardenSelected)="onPlaygroundSelected(playgroundElement)">
+        [playground]="playgroundElement">
       </app-kindergarden-item>
     </div>
   </div>

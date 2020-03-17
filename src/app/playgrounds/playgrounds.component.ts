@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playgrounds.component.css']
 })
 export class PlaygroundsComponent implements OnInit {
-  selectedPlayground;
 
   constructor() { }
 

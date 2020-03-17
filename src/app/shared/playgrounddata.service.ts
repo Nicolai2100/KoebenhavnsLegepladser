@@ -1,8 +1,8 @@
 import {EventEmitter, Injectable, OnInit} from '@angular/core';
 import {Playground} from './playground.model';
-import {AddressModel} from './Address.model';
+import {AddressModel} from './address.model';
 import {HttpClient} from '@angular/common/http';
-import {KinderGardenDum} from './KinderGardenDum.model';
+import {PlaygroundDum} from './playgroundDum.model';
 import {PlaygroundInterface} from './playground.interface';
 
 @Injectable({
@@ -44,7 +44,7 @@ export class PlaygrounddataService {
       false,
       this.address[1])
   ];
-  kinderGardensFromDB: KinderGardenDum[];
+  kinderGardensFromDB: PlaygroundDum[];
   // kinderGardens: PlaygroundInterface[];
 
   statusUpdated = new EventEmitter<string>();

@@ -1,6 +1,6 @@
-import {AddressModel} from './Address.model';
+import {AddressModel} from './address.model';
 // todo skal slettes
-export class KinderGardenDum {
+export class PlaygroundDum {
 
   public constructor(
     public id: number,
