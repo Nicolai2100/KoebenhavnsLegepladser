@@ -5,3 +5,10 @@ div {
 p {
   padding-left: 13px;
 }
+
+img{
+  width:100%;
+  max-width:150px;
+  height: 100%;
+  max-height: 112px;
+}

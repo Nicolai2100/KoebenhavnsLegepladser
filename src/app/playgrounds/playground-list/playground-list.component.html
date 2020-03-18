@@ -1,7 +1,7 @@
 <input class="search" type="text" placeholder="Find legeplads" [(ngModel)]="playgroundname" (input)="Search()">
 <div class="center">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-4">
       <app-kindergarden-item
         *ngFor="let playgroundElement of playgrounds"
         [playground]="playgroundElement">
