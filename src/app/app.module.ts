@@ -20,6 +20,8 @@ import {WorkerService} from './worker-list/worker.service';
 import {PlaygroundPhotosComponent} from './playground-photos/playground-photos.component';
 import {EventsComponent} from './events/events.component';
 
+
+
 const appRoutes: Routes = [
   {path: 'aktiviteter', component: EventsComponent},
   {path: 'billeder', component: PlaygroundPhotosComponent},

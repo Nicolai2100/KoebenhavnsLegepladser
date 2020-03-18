@@ -1,3 +1,14 @@
 .moveDetails {
   margin-left: 60%;
 }
+
+.movingInnerClass {
+  position: relative;
+  left: 400px;
+  margin-top: auto;
+}
+
+.movingElements {
+  margin-top: -375px;
+
+}
