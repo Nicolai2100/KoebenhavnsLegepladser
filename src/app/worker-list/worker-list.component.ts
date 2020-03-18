@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Workers} from './Workes.model';
-import {workerService} from './worker.service';
+import {WorkerService} from './worker.service';
 
 @Component({
   selector: 'app-worker-list',
@@ -10,7 +10,7 @@ import {workerService} from './worker.service';
 export class WorkerListComponent implements OnInit {
   workers: Workers[];
 
-  constructor(private  workerservice: workerService) { }
+  constructor(private  workerservice: WorkerService) { }
 
   ngOnInit() {
     this.workers = this.workerservice.getworkers();

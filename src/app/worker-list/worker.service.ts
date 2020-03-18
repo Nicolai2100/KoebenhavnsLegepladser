@@ -1,8 +1,8 @@
 import {Workers} from './Workes.model';
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 // tslint:disable-next-line:class-name
 @Injectable()
-export class workerService {
+export class WorkerService {
 private employees: Workers[] = [
   new Workers('Gustav', 22422456, 's185031@student.dtu.dk',
     'assets/images/gustav.png'),

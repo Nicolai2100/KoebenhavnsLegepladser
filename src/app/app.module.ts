@@ -16,7 +16,7 @@ import {PlaygroundItemComponent} from './playgrounds/playground-list/playground-
 import {PlaygroundListComponent} from './playgrounds/playground-list/playground-list.component';
 import {PlaygroundsComponent} from './playgrounds/playgrounds.component';
 import {WorkerListComponent} from './worker-list/worker-list.component';
-import {workerService} from './worker-list/worker.service';
+import {WorkerService} from './worker-list/worker.service';
 import {PlaygroundPhotosComponent} from './playground-photos/playground-photos.component';
 import {EventsComponent} from './events/events.component';
 
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule.forRoot()
   ],
-  providers: [workerService],
+  providers: [WorkerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
