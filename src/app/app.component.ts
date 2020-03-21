@@ -11,10 +11,11 @@ import {Router} from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private playgrounddataService: PlaygrounddataService) {
   }
 
   ngOnInit(): void {
+    this.playgrounddataService.getPlaygrounds();
     this.router.navigate(['legepladser', {}]);
   }
 

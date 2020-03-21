@@ -18,13 +18,13 @@ export class PlaygroundDetailsComponent implements OnInit {
 
   ngOnInit() {
     // only works for the first initialization
-    this.playground = this.playgrounddataService.kinderGardens
+    this.playground = this.playgrounddataService.playgrounds
       .find(element => element.name.toLocaleLowerCase() === this.route.snapshot.params['name']);
 
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.playground = this.playgrounddataService.kinderGardens
+          this.playground = this.playgrounddataService.playgrounds
             .find(element => element.name.toLocaleLowerCase() === this.route.snapshot.params['name']);
         }
       );

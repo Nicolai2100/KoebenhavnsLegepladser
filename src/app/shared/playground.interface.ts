@@ -1,18 +1,15 @@
 export interface PlaygroundInterface {
   id: number;
   name: string;
-  addressStreet: string;
-  addressNumber: number;
+  imagePath: string;
+  toiletFacilities: boolean;
+  streetName: string;
+  streetNumber: number;
   commune: string;
   zipCode: number;
-  toilet: boolean;
-  imagePath: string;
   toiletPosibilities: boolean;
-
-  numOfEmployees: number;
-  employeeList: [];
+  assignedUsers: [];
   events: [];
-  adress;
-
+  messages: [];
 
 }

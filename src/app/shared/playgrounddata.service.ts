@@ -1,9 +1,8 @@
-import {EventEmitter, Injectable, OnInit} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Playground} from './playground.model';
-import {AddressModel} from './address.model';
 import {HttpClient} from '@angular/common/http';
-import {PlaygroundDum} from './playgroundDum.model';
 import {PlaygroundInterface} from './playground.interface';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +10,7 @@ import {PlaygroundInterface} from './playground.interface';
 
 export class PlaygrounddataService {
   // path = 'http://localhost:8088/rest/playgrounds';
+  path = 'http://130.225.170.204:8088/rest/playground_list';
 
   events1: string[] = [
     'klatring',
@@ -21,13 +21,8 @@ export class PlaygrounddataService {
     'stafetløb'
   ];
 
-  address: AddressModel[] = [
-    new AddressModel('Frederik V\'s Vej', 4, 2100, 'København Ø'),
-    new AddressModel('Fælledparken ved Edel Sauntes Allé', 4, 2100, 'København Ø')
-  ];
-
-
-  kinderGardens: Playground[] = [
+  playgrounds: Playground[];
+  /* kinderGardens: Playground[] = [
     new Playground('Eriksminde',
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/10/Naturlegeplads_eriksminde_uno_2.jpg',
       this.events1,
@@ -42,28 +37,34 @@ export class PlaygrounddataService {
       'https://www.naturlegepladser.dk/wp-content/uploads/2015/02/image1.jpg',
       this.events2,
       false,
-      this.address[1])
-  ];
-  kinderGardensFromDB: PlaygroundDum[];
-  // kinderGardens: PlaygroundInterface[];
+
+      )
+  ]; */
 
   statusUpdated = new EventEmitter<string>();
 
   constructor(private http: HttpClient) {
   }
 
-/*  getPlaygrounds() {
+  getPlaygrounds() {
     this.http
-      .get<PlaygroundInterface[]>(
-        this.path)
-      .subscribe(
-        response => {
-          response.forEach((s: PlaygroundInterface) => {
-            console.log(s);
-          });
-        },
-        err => console.log(err));
-  }*/
+      .get(this.path)
+      .pipe(
+        map(response => {
+          const playgroundArray = [];
+          for (const key in response) {
+            if (response.hasOwnProperty(key)) {
+              playgroundArray.push({...response[key], id: key});
+            }
+          }
+          this.playgrounds = playgroundArray;
+        })
+      )
+      .subscribe(playground => {
+        console.log(playground);
+      });
+  }
+
 
   /*  private getHighScores() {
     console.log('fetching highscores...');
@@ -77,8 +78,8 @@ export class PlaygrounddataService {
         },
         err => console.log(err));
   }*/
-/*
-  addKinderGarden(newGarden: PlaygroundInterface) {
-    this.kinderGardens.push(newGarden);
-  }*/
+  /*
+    addKinderGarden(newGarden: PlaygroundInterface) {
+      this.kinderGardens.push(newGarden);
+    }*/
 }

@@ -15,7 +15,7 @@ export class PlaygroundListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.playgrounds = this.kindergardendataService.kinderGardens;
+    this.playgrounds = this.kindergardendataService.playgrounds;
   }
 
   Search() {
