@@ -1,13 +1,7 @@
-<input class="search" type="text" placeholder="Find legeplads" [(ngModel)]="playgroundname" (input)="Search()">
-<div class="center">
-  <div class="row">
-    <div class="col-md-4">
-      <app-kindergarden-item
-        *ngFor="let playgroundElement of playgrounds"
-        [playground]="playgroundElement">
-      </app-kindergarden-item>
-    </div>
-  </div>
-</div>
 
-<p *ngIf="!isFetching">IS LOADING...</p>
+
+<h1>Fast HTTP Caching</h1>
+<div *ngFor="let repo of repos | async">
+<h2>{{repo.name}}</h2>
+  <div> {{repo.description}}  </div>
+</div>

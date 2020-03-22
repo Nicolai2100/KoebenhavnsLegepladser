@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Playground} from '../../shared/playground.model';
 import {PlaygrounddataService} from '../../shared/playgrounddata.service';
+import {HttpClient} from '@angular/common/http';
+import {map, startWith} from 'rxjs/operators';
+
+const CACHE_KEY = 'httpRepoCache';
 
 @Component({
   selector: 'app-playground-list',
@@ -11,8 +15,23 @@ export class PlaygroundListComponent implements OnInit {
   playgrounds: Playground[];
   playgroundname: string;
   isFetching: boolean;
-  constructor(private kindergardendataService: PlaygrounddataService) {
+  repos;
+
+  constructor(httpClient: HttpClient, private kindergardendataService: PlaygrounddataService) {
+    const path = 'https://api.github.com/search/repositories?q=angular'
+    this.repos = httpClient.get<any>(path)
+      .pipe(
+        map(data => data.items)
+      );
+    this.repos.subscribe(next => {
+      localStorage[CACHE_KEY] = JSON.stringify(next);
+    });
+
+    this.repos = this.repos.pipe(
+      startWith((JSON.parse(localStorage[CACHE_KEY] || '[]')))
+    );
   }
+
 
   ngOnInit() {
     this.playgrounds = this.kindergardendataService.playgrounds;
