@@ -1,4 +1,4 @@
-export interface PlaygroundInterface {
+export interface IPlayground {
   id: number;
   name: string;
   imagePath: string;

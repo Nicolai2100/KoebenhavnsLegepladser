@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Playground} from '../../shared/playground.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {PlaygrounddataService} from '../../shared/playgrounddata.service';
+import {IPlayground} from '../../shared/IPlayground';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-playground-details',
@@ -9,7 +11,7 @@ import {PlaygrounddataService} from '../../shared/playgrounddata.service';
   styleUrls: ['./playground-details.component.css']
 })
 export class PlaygroundDetailsComponent implements OnInit {
-  @Input() playground: Playground;
+  @Input() playground: IPlayground;
 
   // isOpen = false;
   constructor(private route: ActivatedRoute,

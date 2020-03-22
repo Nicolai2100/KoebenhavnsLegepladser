@@ -1,7 +1,6 @@
-import {AddressModel} from './address.model';
+import {IPlayground} from './IPlayground';
 
-export class Playground {
-  public numOfEmployees: number;
+export class Playground implements IPlayground{
   public assignedUsers: [];
   public events: [ ];
   public messages: [ ];
@@ -15,4 +14,7 @@ export class Playground {
     public commune: string,
     public zipCode: number  ) {
   }
+
+  id: number;
+  toiletPosibilities: boolean;
 }

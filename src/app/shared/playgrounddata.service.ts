@@ -1,8 +1,11 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {Playground} from './playground.model';
 import {HttpClient} from '@angular/common/http';
-import {PlaygroundInterface} from './playground.interface';
-import {map} from 'rxjs/operators';
+import {IPlayground} from './IPlayground';
+import {map, startWith} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+
+const CACHE_KEY = 'httpRepoCache';
 
 @Injectable({
   providedIn: 'root'
@@ -11,44 +14,31 @@ import {map} from 'rxjs/operators';
 export class PlaygrounddataService {
   // path = 'http://localhost:8088/rest/playgrounds';
   path = 'http://130.225.170.204:8088/rest/playground_list';
-
-  events1: string[] = [
-    'klatring',
-    'fodbold'
-  ];
-  events2: string[] = [
-    'vandkamp',
-    'stafetløb'
-  ];
-
-  playgrounds: Playground[];
-  /* kinderGardens: Playground[] = [
-    new Playground('Eriksminde',
-      'https://www.naturlegepladser.dk/wp-content/uploads/2015/10/Naturlegeplads_eriksminde_uno_2.jpg',
-      this.events1,
-      true,
-      this.address[0]),
-    new Playground('Mariehøj',
-      'https://www.naturlegepladser.dk/wp-content/uploads/2015/05/P5250693-1024x768.jpg',
-      this.events2,
-      true,
-      this.address[1]),
-    new Playground('Hakkemosen',
-      'https://www.naturlegepladser.dk/wp-content/uploads/2015/02/image1.jpg',
-      this.events2,
-      false,
-
-      )
-  ]; */
-
+  playgrounds: any;
   statusUpdated = new EventEmitter<string>();
-  isFetching = false;
 
   constructor(private http: HttpClient) {
-    this.getPlaygrounds();
   }
 
   getPlaygrounds() {
+    this.http.get<IPlayground[]>(this.path)
+      .subscribe((response => {
+        this.playgrounds = response;
+        this.playgrounds.forEach(play => {
+          console.log(play);
+        });
+      }));
+    return this.playgrounds;
+    this.playgrounds.subscribe(next => {
+      localStorage[CACHE_KEY] = JSON.stringify(next);
+    });
+
+    this.playgrounds = this.playgrounds.pipe(
+      startWith((JSON.parse(localStorage[CACHE_KEY] || '[]')))
+    );
+  }
+
+  /*getPlaygrounds() {
     this.isFetching = true;
     this.http
       .get(this.path)
@@ -67,7 +57,7 @@ export class PlaygrounddataService {
         console.log(playground);
         this.isFetching = false;
       });
-  }
+  }*/
 
 
   /*  private getHighScores() {
@@ -86,4 +76,13 @@ export class PlaygrounddataService {
     addKinderGarden(newGarden: PlaygroundInterface) {
       this.kinderGardens.push(newGarden);
     }*/
+  /*  events1: string[] = [
+      'klatring',
+      'fodbold'
+    ];
+    events2: string[] = [
+      'vandkamp',
+      'stafetløb'
+    ];
+  */
 }

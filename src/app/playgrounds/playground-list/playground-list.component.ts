@@ -3,6 +3,7 @@ import {Playground} from '../../shared/playground.model';
 import {PlaygrounddataService} from '../../shared/playgrounddata.service';
 import {HttpClient} from '@angular/common/http';
 import {map, startWith} from 'rxjs/operators';
+import {IPlayground} from '../../shared/IPlayground';
 
 const CACHE_KEY = 'httpRepoCache';
 
@@ -14,28 +15,12 @@ const CACHE_KEY = 'httpRepoCache';
 export class PlaygroundListComponent implements OnInit {
   playgrounds: Playground[];
   playgroundname: string;
-  isFetching: boolean;
-  repos;
 
-  constructor(httpClient: HttpClient, private kindergardendataService: PlaygrounddataService) {
-    const path = 'https://api.github.com/search/repositories?q=angular'
-    this.repos = httpClient.get<any>(path)
-      .pipe(
-        map(data => data.items)
-      );
-    this.repos.subscribe(next => {
-      localStorage[CACHE_KEY] = JSON.stringify(next);
-    });
-
-    this.repos = this.repos.pipe(
-      startWith((JSON.parse(localStorage[CACHE_KEY] || '[]')))
-    );
+  constructor(httpClient: HttpClient, private playgrounddataService: PlaygrounddataService) {
   }
 
-
   ngOnInit() {
-    this.playgrounds = this.kindergardendataService.playgrounds;
-    this.isFetching = this.kindergardendataService.isFetching;
+    this.playgrounds = this.playgrounddataService.getPlaygrounds();
   }
 
   Search() {
