@@ -10,12 +10,13 @@ import {PlaygrounddataService} from '../../shared/playgrounddata.service';
 export class PlaygroundListComponent implements OnInit {
   playgrounds: Playground[];
   playgroundname: string;
-
+  isFetching: boolean;
   constructor(private kindergardendataService: PlaygrounddataService) {
   }
 
   ngOnInit() {
     this.playgrounds = this.kindergardendataService.playgrounds;
+    this.isFetching = this.kindergardendataService.isFetching;
   }
 
   Search() {

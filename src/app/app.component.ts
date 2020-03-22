@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.playgrounddataService.getPlaygrounds();
+    // this.playgrounddataService.getPlaygrounds();
     this.router.navigate(['legepladser', {}]);
   }
 

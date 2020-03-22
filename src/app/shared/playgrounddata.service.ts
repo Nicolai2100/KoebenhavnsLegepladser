@@ -42,11 +42,14 @@ export class PlaygrounddataService {
   ]; */
 
   statusUpdated = new EventEmitter<string>();
+  isFetching = false;
 
   constructor(private http: HttpClient) {
+    this.getPlaygrounds();
   }
 
   getPlaygrounds() {
+    this.isFetching = true;
     this.http
       .get(this.path)
       .pipe(
@@ -62,6 +65,7 @@ export class PlaygrounddataService {
       )
       .subscribe(playground => {
         console.log(playground);
+        this.isFetching = false;
       });
   }
 
